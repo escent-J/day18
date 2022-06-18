@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>노드의 추가</title>
+    <script>
+      const appendNode = function () {
+        const parent = document.getElementById("list"); //id가 list로 되어있는 것 선택
+        const newItem = document.getElementById("item1"); //id가 item1로 되어있는 것 선택
+        parent.appendChild(newItem); //자식객체를 부모 객체로 이동
+      };
+      const insertNode = function () {
+        const parent = document.getElementById("list");
+        const frontend = document.getElementById("frontend");
+        const newItem = document.getElementById("item2");
+        parent.insertBefore(newItem, frontend); //버튼 클릭 시 부모 객체 frontend앞에 newItem 생성
+      };
+      const appendText = function () {
+        const text = document.getElementById("text").firstChild;
+        text.insertData(16, "너무"); //16번째 위치에 텍스트 data를 추가
+      };
+    </script>
+  </head>
+  <body>
+    <h2>노드의 추가</h2>
+    <p id="item1">javascript</p>
+    <p id="item2">ReactJS</p>
+    <hr />
+    <div id="list">
+      <p id="frontend">HTML</p>
+      <p>CSS</p>
+      <p>js</p>
+      <p>ReactJS</p>
+      <p>nodeJS</p>
+    </div>
+    <p id="text">점심을 못 먹고 강의를 하니 배가 고프네요</p>
+    <hr />
+    <button onclick="appendNode()">노드추가1</button>
+    <button onclick="insertNode()">노드추가2</button>
+    <button onclick="appendText()">텍스트 추가</button>
+  </body>
+</html>

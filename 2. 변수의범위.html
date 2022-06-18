@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>변수의 범위2</title>
+    <script>
+      let num2 = 100;
+
+      function f3() {
+        // 지역 범위 내의 최상위에 선언부를 실행
+        console.log(num2); // undefined >> 호이스팅 때문에 함수 내의 지역변수를 먼저 찾게 됨
+        // 그러나 지역변수가 아래에 있기 때문에 선언은 되어있지만 정의가 되어있지 않은 것으로 undefined됨
+        let num2 = 200;
+        console.log(num2); // 200
+      }
+      f3();
+    </script>
+  </head>
+  <body></body>
+</html>
